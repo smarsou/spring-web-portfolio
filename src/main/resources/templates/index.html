@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Page</title>
+    <link rel="stylesheet" href="/style/button.css">
+    <link rel="stylesheet" href="/style/background.css">
+    <link rel="stylesheet" href="/style/projects.css">
+    <link rel="stylesheet" href="/style/index.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div id="phone"> Ce portfolio n'est pas pris en charge pour les smartphones. <br> Veuillez nous excuser pour la gêne occasionnée <br>--<br> Veuillez ouvrir une version pour ordinateur.</div>
+<div id="container">
+    <div id="left-column">
+        <p>My CV</p>
+        <svg onclick="home_to_CV()" width="18px" height="17px" viewBox="0 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="prev" transform="translate(8.500000, 8.500000) scale(-1, 1) translate(-8.500000, -8.500000)">
+                <polygon class="arrow" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
+                <polygon class="arrow-fixed" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
+                <path d="M-1.48029737e-15,0.56157424 L-1.48029737e-15,16.1929159 L9.708,8.33860465 L-2.66453526e-15,0.56157424 L-1.48029737e-15,0.56157424 Z M1.33333333,3.30246869 L7.62533333,8.34246869 L1.33333333,13.4327013 L1.33333333,3.30246869 L1.33333333,3.30246869 Z"></path>
+            </g>
+        </svg>
+    </div>
+
+    <div id="profile-column">
+        
+        <img id="profile-image" src="/pictures/profile.png" alt="Ma photo"> <!-- Remplacez 'profile-image.jpg' par le chemin de votre photo -->
+        <h1>Soulaïman Marsou</h1>
+        <h3> Graduate IT Engineer <br> Computer Science · Software Engineering · DATA · AI </h3>
+        <p id="description"> I'm looking for a job opportunity in the field of <strong>Software Engineering</strong> or in the field of <strong>Data</strong> in <strong>Belgium or Luxembourg</strong>. Here is my portfolio. Do not hesitate to check my CV or my projects. You can also find me on LinkedIn.
+        </p>
+        <img id='homebutton' src="/pictures/home.png" onclick="home()">
+
+    </div>
+
+    <div id="right-column">
+        <p>My projects</p>
+        <svg onclick="home_to_projects()" width="18px" height="17px" viewBox="-1 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g>
+                <polygon class="arrow" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
+                <polygon class="arrow-fixed" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
+                <path d="M-4.58892184e-16,0.56157424 L-4.58892184e-16,16.1929159 L9.708,8.33860465 L-1.64313008e-15,0.56157424 L-4.58892184e-16,0.56157424 Z M1.33333333,3.30246869 L7.62533333,8.34246869 L1.33333333,13.4327013 L1.33333333,3.30246869 L1.33333333,3.30246869 Z"></path>
+            </g>
+        </svg>
+    </div>
+</div>
+<!-- Quand on affiche le CV -->
+<iframe id="cv" class="pdf" src="/pdf/CV.pdf" width="90%" height="100%"> </iframe>
+<!-- Quand on affiche les projets -->
+<div id="projects">
+    <div id="maintenance">
+        <img src="/pictures/work-progress.png">
+    </div>
+    <div class="panel">
+        <h1> Software Development </h1>
+        <div class="subpanel">
+            <div class="subsubpanel">
+                <p class="subsubtitle">Portofolio with Spring Boot</p>
+                <p> After having followed the training <a href="https://openclassrooms.com/fr/courses/6900101-creez-une-application-java-avec-spring-boot">Créez une application Java avec Spring Boot</a> from <a href="https://openclassrooms.com/">OpenClassroms</a>, I implemented the web application in which you are currently navigating in. </p>
+                <a style="" target="_blank" href="https://github.com/smarsou/spring-web-portfolio">Learn more...</a>
+            </div>
+        </div>
+        <h1> Data & AI </h1>
+        <div class="subpanel">
+            <div class="subsubpanel">
+                <p class="subsubtitle">EDA: Analysis of Grenoble's Urban Vegetation</p>
+                <p>Exploratory Data Analysis of Grenoble's Urban Vegetation.</p>
+                <a style="" target="_blank" href="https://colab.research.google.com/drive/13i1xwQEhz7C6L1DBw0atsRNq6nh4-aSz?usp=sharing">Learn more...</a>
+                <!-- <p style="color:brown;">En cours de préparation...</p> -->
+            </div>
+            <div class="subsubpanel">
+                <p class="subsubtitle">Data Visualization: Wildfires in France</p>
+                <p>Design of various visualizations to understand wildfire data in France since 1973.</p>
+                <a style="" target="_blank" href="https://github.com/smarsou/data-visualization-forest-fires">Learn more...</a>
+            </div>
+            <div class="subsubpanel">
+                <p class="subsubtitle">Generative AI & LLM research project </p>
+                <p> Written a state-of-the-art research on LLMs about fine-tuning, optimization and comparison.
+                    Fine-tuned a model for code generation, optimized it using prompt engineering and quantization.
+                    Documented test results and provided conclusions to complete the research report. </p>
+                <a style="" target="_blank" href="/pdf/pi.pdf">Learn more...</a>
+            </div>
+            <div class="subsubpanel">
+                <p class="subsubtitle">AI text generated detector</p>
+                <p> Training different models with the goal of distinguishing between an essay written by a high school student and one generated by an AI. This project originates from the statement of a Kaggle competition. </p>
+                <a style="" target="_blank" href="https://github.com/smarsou/ai-text-detector">Learn more...</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- begin background -->
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
+<!-- end background -->
+
+<script>
+    function fadeOut(el, duration) {
+
+        /*
+        * @param el - The element to be faded out.
+        * @param duration - Animation duration in milliseconds.
+        */
+
+        var step = 10 / duration,
+            opacity = 1;
+        function next() {
+            if (opacity <= 0) { return; }
+            el.style.opacity = ( opacity -= step );
+            setTimeout(next, 10);
+        }
+        next();
+    }
+    function fadeIn(el, duration) {
+
+        /*
+        * @param el - The element to be faded out.
+        * @param duration - Animation duration in milliseconds.
+        */
+
+        var step = 10 / duration,
+            opacity = 0;
+        function next() {
+            if (opacity >= 1) { return; }
+            el.style.opacity = ( opacity += step );
+            setTimeout(next, 10);
+        }
+        next();
+    }
+
+    container = document.getElementById('container')
+    cl1 = document.getElementById('left-column')
+    cl2 = document.getElementById('right-column')
+    cv = document.getElementById('cv')
+    homebutton = document.getElementById('homebutton')
+    projects = document.getElementById('projects')
+    desc = document.getElementById('description')
+    height = "70vh"
+    width = "50vw"
+    // document.getElementsByTagName("body")[0].style.justifyContent = "right"
+    // d.style.transform = "scale(0.5, 1)"
+
+    function home_to_projects(){
+        container.style.width = "10vw"
+        container.style.height = "100vh"
+        container.style.transform = 'translate(45vw)'
+        cl2.style.display = 'none'
+        cl1.style.display = 'none'
+        desc.style.display = 'none'
+        homebutton.style.display = 'block'
+        projects.style.display = 'block'
+        container.style.justifyContent = 'center'
+        fadeIn(projects, 300)
+        // container.style.borderLeft = "2px solid #8f8f8f"
+        // projects.style.transform = 'translate(0,100vh)'
+    }
+
+    function home_to_CV(){
+        container.style.width = "10vw"
+        container.style.height = "100vh"
+        container.style.transform = 'translate(-45vw)'
+        cl1.style.display = 'none'
+        cl2.style.display = 'none'
+        desc.style.display = 'none'
+        homebutton.style.display = 'block'
+        cv.style.display = "block"
+        fadeIn(cv, 300)
+    }
+
+    function home(){
+        container.style.width = width
+        container.style.height = height
+        container.style.transform = 'translate(0)'
+        cl1.style.display = 'block'
+        cl2.style.display = 'block'
+        cv.style.display = "none"
+        projects.style.display = "none"
+        homebutton.style.display = 'none'
+        desc.style.display = 'block'
+        container.style.alignItems = "center"
+        container.style.border = "0px"
+    }
+
+    // home_to_projects()
+</script>
+</body>
+</html>
