@@ -13,16 +13,16 @@ jobs:
     runs-on: portfolio
     steps:
     - name: Clean the repo
-      run: rm -rf spring-web-portfolio/
+      run: sudo systemctl stop portfolio && rm -rf spring-web-portfolio/
       
     - name: Import Repo
       run: git clone https://github.com/smarsou/spring-web-portfolio.git
 
-    - name: Update permissions 
+    - name: Update permissions
       run: cd spring-web-portfolio/ && chmod 777 mvnw
 
     - name: Build the jar file
       run: cd spring-web-portfolio/ && ./mvnw package
 
-    - name: Execute the jar file
-      run: cd spring-web-portfolio/ && java -jar target/portfolio-0.0.1-SNAPSHOT.jar
+    - name: Execute the service which execute the jar file
+      run: sudo systemctl start portfolio
