@@ -20,3 +20,9 @@ jobs:
 
     - name: Update permissions 
       run: cd spring-web-portfolio/ && chmod 777 mvnw
+
+    - name: Build the jar file
+      run: ./mvnw package
+
+    - name: Execute the jar file
+      run: java -jar target/portfolio-0.0.1-SNAPSHOT.jar
