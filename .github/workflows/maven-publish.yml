@@ -1,0 +1,28 @@
+# This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
+# For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
+
+name: Maven Package
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  deploy:
+    runs-on: portfolio
+    steps:
+    - name: Clean the repo
+      run: sudo systemctl stop portfolio && rm -rf spring-web-portfolio/
+      
+    - name: Import Repo
+      run: git clone https://github.com/smarsou/spring-web-portfolio.git
+
+    - name: Update permissions
+      run: cd spring-web-portfolio/ && chmod 777 mvnw
+
+    - name: Build the jar file
+      run: cd spring-web-portfolio/ && ./mvnw package
+
+    - name: Execute the service which execute the jar file
+      run: sudo systemctl start portfolio
