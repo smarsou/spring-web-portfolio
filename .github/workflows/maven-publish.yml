@@ -9,8 +9,11 @@ on:
     - main
 
 jobs:
-  build:
+  deploy:
     runs-on: portfolio
     steps:
     - name: Import Repo
-      run: mkdir test1
+      run: git clone https://github.com/smarsou/spring-web-portfolio.git & cd spring-web-portfolio/
+
+    - name: Update permissions 
+      run: chmod 777 mvnw
