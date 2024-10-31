@@ -12,8 +12,11 @@ jobs:
   deploy:
     runs-on: portfolio
     steps:
+    - name: Clean the repo
+      run: rm -rf spring-web-portfolio/
+      
     - name: Import Repo
-      run: git clone https://github.com/smarsou/spring-web-portfolio.git & cd spring-web-portfolio/
+      run: git clone https://github.com/smarsou/spring-web-portfolio.git
 
     - name: Update permissions 
-      run: chmod 777 mvnw
+      run: cd spring-web-portfolio/ && chmod 777 mvnw
