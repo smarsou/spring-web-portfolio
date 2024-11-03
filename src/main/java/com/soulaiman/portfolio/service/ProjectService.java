@@ -45,6 +45,17 @@ public class ProjectService {
         return topicsUnescaped;
     }
 
+    public Project saveProject(Project project) {
+
+        Project savedProject;
+        savedProject = projectProxy.saveProject(project);
+
+        return savedProject;
+    }
+
+    public void deleteProject(Long id){
+        projectProxy.deleteProject(id);
+    }
     
 
 }
