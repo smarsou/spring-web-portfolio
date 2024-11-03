@@ -14,6 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.soulaiman.portfolio.model.Project;
 import com.soulaiman.portfolio.service.ProjectService;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @Controller
@@ -33,6 +35,12 @@ public class MainController {
         model.addAttribute("projects", projects);
         return "index";
     }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+    
 
     @GetMapping("/admin")
     public String admin(Model model) {
