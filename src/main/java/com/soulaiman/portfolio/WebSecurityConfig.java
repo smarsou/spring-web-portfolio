@@ -15,16 +15,20 @@ import org.springframework.security.web.SecurityFilterChain;
 public class WebSecurityConfig {
     @Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		http
-			.authorizeHttpRequests((requests) -> requests
-				.requestMatchers("/", "/error", "login", "/public/**").permitAll()
-				.anyRequest().authenticated()
-			)
-			.formLogin((form) -> form
-				.loginPage("/login")
-				.permitAll()
-			)
-			.logout((logout) -> logout.permitAll());
+		http.headers(headers -> headers
+				.frameOptions(frameOptions -> frameOptions
+					.sameOrigin()
+				)
+		)
+		.authorizeHttpRequests((requests) -> requests
+			.requestMatchers("/", "/error", "/public/**").permitAll()
+			.anyRequest().authenticated()
+		)
+		.formLogin((form) -> form
+			.loginPage("/login")
+			.permitAll()
+		)
+		.logout((logout) -> logout.permitAll());
 
 		return http.build();
 	}
@@ -34,7 +38,7 @@ public class WebSecurityConfig {
 		UserDetails user =
 			 User.withUsername("admin")
 				.password("{bcrypt}$2a$10$IDgZMldRTnPueihyfY3e3.XbdUQknNNYmj8BtVQCEksslgs6puClu")
-				.roles("USER")
+				.roles("ADMIN")
 				.build();
 
 		return new InMemoryUserDetailsManager(user);

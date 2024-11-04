@@ -26,9 +26,10 @@ Accessible at http://smarsou.fr
 
 ### Roadmap
 
-- Configure SSL certif to enable HTTPS
-- deploy using Docker
-- Add the modify features in the admin panel (only add and delete is implemented)
+- Configure SSL certif to enable HTTPS.
+- deploy using Docker.
+- Implement tests
+- Add the modify feature in the admin panel (only add and delete is implemented).
 
 ## Hosting the web app
 
