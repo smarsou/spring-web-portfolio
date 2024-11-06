@@ -11,7 +11,7 @@ It communicates with the API to manage the data which I want to display on my po
 **Tech stack** : Java, Spring Boot, Maven, Azure VM, Linux, Github CI/CD, REST API, Nginx
 
 ## The Web App
-Accessible at http://smarsou.fr
+Accessible at http://smarsou.fr (We encountered some issues regarding deployment, please esxcuse us if the portfolio is not available)
 ### Home page (/)
 <img src=".github/static/home.png" width="800"/>
 
