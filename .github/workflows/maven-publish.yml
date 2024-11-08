@@ -9,8 +9,6 @@ on:
     - main
     paths:
       - src/**
-    paths-ignore:
-    - 'README.md'
 
 jobs:
   deploy:
