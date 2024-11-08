@@ -11,7 +11,7 @@ It communicates with the API to manage the data which I want to display on my po
 **Tech stack** : Java, Spring Boot, Maven, Azure VM, Linux, Github CI/CD, REST API, Nginx
 
 ## The Web App
-Accessible at http://smarsou.fr
+Accessible at http://smarsou.fr (We encountered some issues regarding deployment, please esxcuse us if the portfolio is not available)
 ### Home page (/)
 <img src=".github/static/home.png" width="800"/>
 
@@ -23,10 +23,10 @@ Accessible at http://smarsou.fr
 - Succesfully implemented a micro-service REST API with CRUD operations to manage the data about all my experience and project which I want to display in my portfolio. 
 - Succesfully implemented an admin panel which allows to dynamically add new experience or delete older ones (by using the previous microservice API).
 - Simple authentication system implemented for the admin panel (could be more secure by giving the hashed password throught an external source).
+- Added Let's Encrypt certificate on the linux server for HTTPS
 
 ### Roadmap
 
-- Configure SSL certif to enable HTTPS.
 - deploy using Docker.
 - Implement tests
 - Add the modify feature in the admin panel (only add and delete is implemented).
