@@ -14,9 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.soulaiman.portfolio.model.Project;
 import com.soulaiman.portfolio.service.ProjectService;
-import org.springframework.web.bind.annotation.RequestParam;
-
-
 
 @Controller
 public class MainController {
@@ -28,7 +25,6 @@ public class MainController {
     public String index(Model model) {
 
         Iterable<Project> projects = projectService.getProjects();
-        
         Iterable<String> topics = projectService.getTopics();
 
         model.addAttribute("topics", topics);
