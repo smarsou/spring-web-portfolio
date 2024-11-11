@@ -11,7 +11,7 @@ It communicates with the API to manage the data which I want to display on my po
 **Tech stack** : Java, Spring Boot, Maven, Azure VM, Linux, Github CI/CD, REST API, Nginx
 
 ## The Web App
-Accessible at http://smarsou.fr (We encountered some issues regarding deployment, please esxcuse us if the portfolio is not available)
+Accessible at http://smarsou.fr
 ### Home page (/)
 <img src=".github/static/home.png" width="800"/>
 
@@ -27,7 +27,6 @@ Accessible at http://smarsou.fr (We encountered some issues regarding deployment
 
 ### Roadmap
 
-- deploy using Docker.
 - Implement tests
 - Add the modify feature in the admin panel (only add and delete is implemented).
 
@@ -35,27 +34,30 @@ Accessible at http://smarsou.fr (We encountered some issues regarding deployment
 
 For hosting the web app, I setup a Ubuntu virtual machine using Microsoft Azure Portal.
 
-In this virtual machine, I managed :
-- to open the port 80/tcp and 443/tcp
-- to install a java jre
-- to configure NGINX as a reverse proxy (still need to configure ssl for https)
-- to install a github runner to deploy the Spring Boot web app continuously after any push on the main branch of this repository.
-- the configuration of a systemd service to start and stop the SPRING BOOT web app
-- the configuration of a systemd service for the github runner which run the jobs of the continous deployment.
-- to start the Spring Boot API by cloning and starting the app from the repo 'spring-api-portfolio'.
+In this virtual machine:
+- Firewalls rules to open port 80/tcp and 443/tcp are setup
+- Java 17 jre is installed
+- Nginx is configured as a reverse proxy with an ssl certificate from Let's Encrypt.
+- A systemd service is configured to start and stop this web app
+- The microservice REST API from the repository 'smarsou/spring-api-portfolio' is deployed in a docker container.
+- A github runner is setup to deploy the web app continuously after any push on the main branch of this repository.
+- A github runner is setup to deploy the microservice REST API continuously after any push on the main branch of the corresponding repository.
+- A systemd service is configured to manage the github runners which run the jobs of the continous deployment.
+
 
 ## CI/CD
 
-For the Continuous Deployment, I installed a github runner on the ubuntu server.
+For the Continuous Deployment, the github runner on the ubuntu server does the job.
 You can see the configuration of the pipeline in .github/workflows/maven-publish.yml.
 
 A job is triggered every time a push is made on the main branch.
 
-The job does the following:
+To show you different approach of deploying apps, I chose to deploy this application in the server directly and manage it throught a systemd service. This is a straihtforward and simple way to deploy application.
+For a more consistent and popular way of deploy apps, you can check how I deployed the REST API using docker (http://github.com/smarsou/spring-api-portfolio)
+
+The github workflow job does the following for this repository :
 - stop the old SPRING BOOT web app and clean the repository in which we have the Jar file.
 - import the current repository
 - execute the packaging of the Spring app in a jar file.
 - start the new jar (by starting the systemd service)
-
-Read the configuration file for more details.
 
