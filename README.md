@@ -29,7 +29,6 @@ Accessible at http://smarsou.fr
 
 ### Roadmap
 
-- Implement tests
 - Add the modify feature in the admin panel (only add and delete is implemented).
 
 ## Hosting the web app
