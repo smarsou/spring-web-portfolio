@@ -8,7 +8,9 @@ It includes :
 
 It communicates with the API to manage the data which I want to display on my portfolio.
 
-**Tech stack** : Java, Spring Boot, Maven, Azure VM, Linux, Github CI/CD, REST API, Nginx
+**Tech stack** : Java, Spring Boot, Maven, JUnit, Mockito, Azure VM, Linux, Github CI/CD, REST API, Nginx, SonarCloud
+
+**Summary**: 
 
 ## The Web App
 Accessible at http://smarsou.fr
@@ -27,7 +29,6 @@ Accessible at http://smarsou.fr
 
 ### Roadmap
 
-- Implement tests
 - Add the modify feature in the admin panel (only add and delete is implemented).
 
 ## Hosting the web app
@@ -43,7 +44,6 @@ In this virtual machine:
 - A github runner is setup to deploy the web app continuously after any push on the main branch of this repository.
 - A github runner is setup to deploy the microservice REST API continuously after any push on the main branch of the corresponding repository.
 - A systemd service is configured to manage the github runners which run the jobs of the continous deployment.
-
 
 ## CI/CD
 
