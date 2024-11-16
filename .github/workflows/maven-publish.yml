@@ -9,10 +9,11 @@ on:
     - main
     paths:
       - src/main/**
+      - .github/workflows/**
 
 jobs:
   deploy:
-    runs-on: portfolio
+    runs-on: portfolio-web
     steps:
     - name: Clean the repo
       run: sudo systemctl stop portfolio && rm -rf spring-web-portfolio/
@@ -26,5 +27,8 @@ jobs:
     - name: Build the jar file
       run: cd spring-web-portfolio/ && ./mvnw package
 
-    - name: Execute the service which execute the jar file
-      run: sudo systemctl start portfolio
+    - name: Update docker image
+      run: cd spring-web-portfolio/ && sudo docker build --build-arg JAR_FILE=target/*.jar -t smarsou/web .
+
+    - name: Clean code
+      run: rm -rf spring-web-portfolio/
