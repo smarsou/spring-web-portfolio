@@ -16,7 +16,7 @@ jobs:
     runs-on: portfolio-web
     steps:
     - name: Clean the repo
-      run: sudo systemctl stop portfolio && rm -rf spring-web-portfolio/
+      run: rm -rf spring-web-portfolio/
       
     - name: Import Repo
       run: git clone https://github.com/smarsou/spring-web-portfolio.git
