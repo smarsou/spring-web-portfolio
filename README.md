@@ -33,17 +33,47 @@ Accessible at http://smarsou.fr
 
 ## Hosting the web app
 
-For hosting the web app, I setup a Ubuntu virtual machine using Microsoft Azure Portal.
+For hosting the web app, I setup a Ubuntu virtual machine on OVHCloud.
 
 In this virtual machine:
 - Firewalls rules to open port 80/tcp and 443/tcp are setup
-- Java 17 jre is installed
+- Java 17 jre, Docker, and Nginx are installed
 - Nginx is configured as a reverse proxy with an ssl certificate from Let's Encrypt.
-- A systemd service is configured to start and stop this web app
-- The microservice REST API from the repository 'smarsou/spring-api-portfolio' is deployed in a docker container.
-- A github runner is setup to deploy the web app continuously after any push on the main branch of this repository.
 - A github runner is setup to deploy the microservice REST API continuously after any push on the main branch of the corresponding repository.
-- A systemd service is configured to manage the github runners which run the jobs of the continous deployment.
+- Using docker compose, the app is deployed with :
+  - A container for the web app
+  - A container for the api
+  - A watchtower container
+
+### Docker configuration
+
+Here is the *docker-compose.yml* file which is present in the VM.
+
+  services:
+    portfolio-web:
+      image: smarsou/web
+      container_name: portfolio-web
+      ports:
+        - 9000:9000
+      environment:
+        - API_DOMAIN=http://portfolio-api:9001/
+      depends_on:
+        portfolio-api:
+          condition: service_started
+      restart: always
+    portfolio-api:
+      image: smarsou/api
+      container_name: portfolio-api
+      ports:
+        - 9001:9001
+      restart: always
+    watchtower:
+      image: containrrr/watchtower
+      container_name: watchtower
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+      restart: always
+
 
 ## CI/CD
 
@@ -52,12 +82,10 @@ You can see the configuration of the pipeline in .github/workflows/maven-publish
 
 A job is triggered every time a push is made on the main branch.
 
-To show you different approach of deploying apps, I chose to deploy this application in the server directly and manage it throught a systemd service. This is a straihtforward and simple way to deploy application.
-For a more consistent and popular way of deploy apps, you can check how I deployed the REST API using docker (http://github.com/smarsou/spring-api-portfolio)
-
 The github workflow job does the following for this repository :
 - stop the old SPRING BOOT web app and clean the repository in which we have the Jar file.
 - import the current repository
 - execute the packaging of the Spring app in a jar file.
 - start the new jar (by starting the systemd service)
+
 
