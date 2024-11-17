@@ -1,6 +1,9 @@
 package com.soulaiman.portfolio.repository;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -12,18 +15,11 @@ import com.soulaiman.portfolio.model.Project;
 @Component
 public class ProjectProxy {
 
-    // public List<Project> getProjects(){
-
-    //     WebClient client = WebClient.create("http://localhost:9001");
-    //     return client.get()
-    //         .uri(URI.create("/project"))
-    //         .retrieve()
-    //         .bodyToFlux(Project.class).collectList().block();
-            
-    // }
+    @Value("${api.domain}")
+    private String apiDomain;
 
     public Iterable<Project> getProjects() {
-        String getProjectsUrl = "http://localhost:9001/project";
+        String getProjectsUrl = this.apiDomain + "project";
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Iterable<Project>> response = restTemplate.exchange(
@@ -37,7 +33,7 @@ public class ProjectProxy {
     }
 
     public Project saveProject(Project project){
-        String postProjectUrl = "http://localhost:9001/project";
+        String postProjectUrl = this.apiDomain + "project";
 
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<Project> request = new HttpEntity<Project>(project);
@@ -64,7 +60,7 @@ public class ProjectProxy {
     }
 
     public void deleteProject(Long id){
-        String deleteProjectUrl = "http://localhost:9001/project/" + Long.toString(id);
+        String deleteProjectUrl = this.apiDomain + "project/" + Long.toString(id);
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Void> response = restTemplate.exchange(
