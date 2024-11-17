@@ -8,7 +8,7 @@ It includes :
 
 It communicates with the API to manage the data which I want to display on my portfolio.
 
-**Tech stack** : Java, Spring Boot, Maven, JUnit, Mockito, Azure VM, Linux, Github CI/CD, REST API, Nginx, SonarCloud
+**Tech stack** : Java, Spring Boot, Maven, JUnit, Mockito, Linux, Github CI/CD, REST API, Nginx, Docker, SonarCloud
 
 **Summary**: 
 
@@ -49,30 +49,30 @@ In this virtual machine:
 
 Here is the *docker-compose.yml* file which is present in the VM.
 
-  services:
-    portfolio-web:
-      image: smarsou/web
-      container_name: portfolio-web
-      ports:
-        - 9000:9000
-      environment:
-        - API_DOMAIN=http://portfolio-api:9001/
-      depends_on:
-        portfolio-api:
-          condition: service_started
-      restart: always
-    portfolio-api:
-      image: smarsou/api
-      container_name: portfolio-api
-      ports:
-        - 9001:9001
-      restart: always
-    watchtower:
-      image: containrrr/watchtower
-      container_name: watchtower
-      volumes:
-        - /var/run/docker.sock:/var/run/docker.sock
-      restart: always
+    services:
+      portfolio-web:
+        image: smarsou/web
+        container_name: portfolio-web
+        ports:
+          - 9000:9000
+        environment:
+          - API_DOMAIN=http://portfolio-api:9001/
+        depends_on:
+          portfolio-api:
+            condition: service_started
+        restart: always
+      portfolio-api:
+        image: smarsou/api
+        container_name: portfolio-api
+        ports:
+          - 9001:9001
+        restart: always
+      watchtower:
+        image: containrrr/watchtower
+        container_name: watchtower
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
+        restart: always
 
 
 ## CI/CD
@@ -83,9 +83,10 @@ You can see the configuration of the pipeline in .github/workflows/maven-publish
 A job is triggered every time a push is made on the main branch.
 
 The github workflow job does the following for this repository :
-- stop the old SPRING BOOT web app and clean the repository in which we have the Jar file.
-- import the current repository
+- pull the current repository
 - execute the packaging of the Spring app in a jar file.
-- start the new jar (by starting the systemd service)
+- build the new image
+
+Then, the image is in the local registry. 
 
 
