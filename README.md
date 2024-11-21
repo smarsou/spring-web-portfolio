@@ -15,21 +15,19 @@ It communicates with the API to manage the data which I want to display on my po
 ## The Web App
 Accessible at http://smarsou.fr
 ### Home page (/)
-<img src=".github/static/home.png" width="800"/>
+<img src=".github\static\portfolio-2.png" width="800"/>
 
 ### Admin panel (/admin)
 <img src=".github/static/admin.png" width="800"/>
 
 ### News
 
+- New app hosted for demonstration, at http://smarsou.fr/lab/hackaton.
+- New interface.
 - Succesfully implemented a micro-service REST API with CRUD operations to manage the data about all my experience and project which I want to display in my portfolio. 
 - Succesfully implemented an admin panel which allows to dynamically add new experience or delete older ones (by using the previous microservice API).
 - Simple authentication system implemented for the admin panel (could be more secure by giving the hashed password throught an external source).
 - Added Let's Encrypt certificate on the linux server for HTTPS
-
-### Roadmap
-
-- Add the modify feature in the admin panel (only add and delete is implemented).
 
 ## Hosting the web app
 
