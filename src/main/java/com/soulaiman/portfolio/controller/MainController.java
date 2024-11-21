@@ -29,7 +29,7 @@ public class MainController {
 
         // model.addAttribute("topics", topics);
         // model.addAttribute("projects", projects);
-        return "index";
+        return "index"; 
     }
 
     @GetMapping("/login")

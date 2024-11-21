@@ -134,6 +134,7 @@
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 1.5rem;
+    padding: 90px;
   }
   
   .about-img img {
@@ -188,7 +189,7 @@
   .services-list div {
     background-color: transparent;
     padding: 40px;
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 13px;
     border-right: 10px;
     border-radius: 20px;
@@ -498,8 +499,8 @@
   /**********************     6      *****************/
   
   .main-text {
-    padding-top: 130px;
-    margin-top: 200px;
+    padding-top: 90px;
+    /* margin-top: 200px; */
   }
   .main-text h2 {
     font-size: 60px;
@@ -510,9 +511,39 @@
     color: #0ef;
   }
   .portfolio-content {
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(359px, auto)); */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(359px, auto));
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+    padding: 90px;
+
   }
+
+  .project-image-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .project-image {
+    border-radius: 8px;
+    max-width: 85%;
+    height: auto;
+    border: 1px solid white;
+  }
+
+  .portfolio-row{
+    background-color: transparent;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 13px;
+    border-right: 10px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px #012290f7, 1px 1px 40px #0053b8f7;
+  }
+  
   .row {
     position: relative;
     overflow: hidden;
@@ -538,11 +569,22 @@
   }
   
   .layer h5 {
-    color: #000;
-    font-size: 1rem;
+    color: #FFF;
+    font-size: 30px;
     line-height: 1.8;
   }
-  .layer i {
+
+  .layer {
+    font-size: 18px;
+  }
+
+  .list-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-top: 20px; */
+  }
+  /* .layer i {
     color: #ff004f;
     margin-top: 20px;
     font-size: 20px;
@@ -553,7 +595,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-  }
+  } */
   .row:hover img {
     transform: scale(1.1);
   }
