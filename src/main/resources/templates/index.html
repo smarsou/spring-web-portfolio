@@ -1,78 +1,354 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M. Marsou</title>
-    <link rel="stylesheet" href="/public/style/button.css">
-    <link rel="stylesheet" href="/public/style/background.css">
-    <link rel="stylesheet" href="/public/style/projects.css">
-    <link rel="stylesheet" href="/public/style/index.css">
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="/public/style/index.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
+
 <body>
-<div id="phone"> Ce portfolio n'est pas pris en charge pour les smartphones. <br> Veuillez nous excuser pour la gêne occasionnée <br>--<br> Veuillez ouvrir une version pour ordinateur.</div>
-<div id="container">
-    <div id="left-column">
-        <p>My CV</p>
-        <svg onclick="home_to_CV()" width="18px" height="17px" viewBox="0 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g id="prev" transform="translate(8.500000, 8.500000) scale(-1, 1) translate(-8.500000, -8.500000)">
-                <polygon class="arrow" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
-                <polygon class="arrow-fixed" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
-                <path d="M-1.48029737e-15,0.56157424 L-1.48029737e-15,16.1929159 L9.708,8.33860465 L-2.66453526e-15,0.56157424 L-1.48029737e-15,0.56157424 Z M1.33333333,3.30246869 L7.62533333,8.34246869 L1.33333333,13.4327013 L1.33333333,3.30246869 L1.33333333,3.30246869 Z"></path>
-            </g>
-        </svg>
-    </div>
+  <div id="phone"> Ce portfolio n'est pas pris en charge pour les smartphones. <br> Veuillez nous excuser pour la gêne occasionnée <br>--<br> Veuillez ouvrir une version pour ordinateur.</div>
+  
+  <header class="header">
+    <a href="#home" class="logo">Soulaïman Marsou</a>
+    <nav class="navbar">
+      <a href="#home" class="active" >Home</a>
+      <a href="/public/pdf/CV.pdf" target="_blank">Resume</a>
+      <a href="#portfolio">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <div id="profile-column">
-        
-        <img id="profile-image" src="/public/pictures/profile.png" alt="Ma photo"> <!-- Remplacez 'profile-image.jpg' par le chemin de votre photo -->
-        <h1>Soulaïman Marsou</h1>
-        <h3> Graduate IT Engineer <br> Software Engineering · DATA · AI </h3>
-        <p id="description"> I'm looking for a job opportunity in the field of <strong>Software Engineering</strong> or in the field of <strong>Data</strong> in <strong>Belgium or Luxembourg</strong>. Here is my portfolio. Do not hesitate to check my CV or my projects. You can also find me on LinkedIn.
-        </p>
-        <img id='homebutton' src="/public/pictures/home.png" onclick="home()">
+  <!-- ********************* Part 1 ********************* -->
+  <section class="home" id="home">
+    <div class="home-content">
+      <h3>Hello, It's me 👋</h3>
+      <h1>Soulaïman Marsou</h1>
+      <h3>Your go-to <span class="text"></span></h3>
+      <p>
+        I'm an IT Engineer passionate about technology and innovation.  
+      <br> Specialize in Data & AI, with a solid background in Software Development, I'm always eager to learn and grow in new areas.  
+      <br> And there's so much more I'm excited to share with you...
+      </p>
 
+      <div class="home-Sci">
+        <a href="https://www.linkedin.com/in/soula%C3%AFmanmarsou/" target="_blank" rel="noopener noreferrer" style="--i:9"><i class='bx bxl-linkedin-square'></i></a>
+        <a href="https://github.com/smarsou" target="_blank" rel="noopener noreferrer" style="--i:10"><i class='bx bxl-github'></i></a>
+      </div>
+      <a href="#what" class="btn-box">More About Me</a>
     </div>
+    <div class="about-img1">
+      <img class="img1" src="img.png" alt="">
+    </div>
+  </section>
 
-    <div id="right-column">
-        <p>My projects</p>
-        <svg onclick="home_to_projects()" width="18px" height="17px" viewBox="-1 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g>
-                <polygon class="arrow" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
-                <polygon class="arrow-fixed" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
-                <path d="M-4.58892184e-16,0.56157424 L-4.58892184e-16,16.1929159 L9.708,8.33860465 L-1.64313008e-15,0.56157424 L-4.58892184e-16,0.56157424 Z M1.33333333,3.30246869 L7.62533333,8.34246869 L1.33333333,13.4327013 L1.33333333,3.30246869 L1.33333333,3.30246869 Z"></path>
-            </g>
-        </svg>
+  <section class="services" id="services">
+    <div class="container" id="what">
+      <h1 class="sub-title">What I <span>do</span>? 💪</h1>
+      <div class="services-list">
+        <div>
+          <i class='bx bx-code' style='color:#00eeff'></i>
+          <h2>Development</h2>
+          <p>💻 I develop robust software and web applications in Python, Java, or PHP. I'm experienced with frameworks like Flask, Spring Boot, and Laravel. 
+          🔄 I use efficient CI/CD pipelines with GitHub, Docker, and SonarQube to streamline the development process. 
+          🖥️ I also manage Linux server configurations and possess a broad range of skills in System Engineering. 
+          🌐 Additionally, I implement REST APIs to enable seamless communication between services.</p>
+        </div>
+        <div>
+          <i class='bx bx-bar-chart-alt-2' style='color:#00eeff'></i>
+          <h2>Data Science</h2>
+          <p>📊 I extract meaningful features from complex datasets through Exploratory Data Analysis (EDA). 
+          🐍 I leverage Python in Jupyter Notebooks with libraries like pandas, matplotlib, and scikit-learn to clean, transform, and unlock the full potential of data.</p>
+        </div>
+        <div>
+          <i class='bx bx-bot' style='color:#00eeff'></i>
+          <h2>AI</h2>
+          <p>🤖 I specialize in training Machine Learning Models and Large Language Models. 
+          🧠 Using PyTorch and Hugging Face, I optimize training processes to achieve the best performance. 
+          🌐 I integrate these solutions into web applications by implementing REST APIs, making AI accessible and functional in real-world scenarios.</p>
+        </div>
+        <div>
+          <i class='bx bx-data' style='color:#00eeff'></i>
+          <h2>Big Data</h2>
+          <p>🗄️ I design and manage databases using robust technologies, handling both SQL and NoSQL systems. 
+          🐘 My primary experience is with PostgreSQL, but I also work with MongoDB and HBase. 
+          🌐 I am familiar with Hadoop and its HDFS ecosystem. 
+          🚀 To stay up-to-date, I continually train on modern tools and technologies, including Azure Data solutions.</p>
+        </div>        
+      </div>
     </div>
-</div>
-<!-- Quand on affiche le CV -->
-<iframe id="cv" class="pdf" src="/public/pdf/CV.pdf" width="90%" height="100%"> </iframe>
-<!-- Quand on affiche les projets -->
-<div id="projects">
-    <div id="maintenance">
-        <img src="/public/pictures/work-progress.png">
-    </div>
-    <div class="panel">
-        <div th:each="topic: ${topics}">
-            <h1 style="font-weight:700" th:text="${topic}"></h1>
-            <div class="subpanel">
-                <div th:each="project: ${projects}" th:if="${project.topic == topic}" th:utext="${project.html}" class="subsubpanel">
+  </section>
+
+  <section>
+    <div id="portfolio">
+        <div class="main-text" id="project">
+            <h2>Latest <span>Projects</span></h2>
+            <div class="portfolio-content">
+                <div class="project-image-wrapper"><img class="project-image" src="/public/pictures/ai-1.png" alt="Project Image"></div>
+                <div class="portfolio-row">
+                    <div class="layer">
+                      <h5>AI SaaS</h5>
+                      <p>
+                        I developed an AI SaaS platform that detects whether an English text was written by a human or a large language model (LLM). <br>
+                        🤖 The AI model is a Random Forest classifier, selected after performing a GridSearch across various models. <br>
+                        🔍 Explore the Exploratory Data Analysis (EDA) and training process <a href="https://github.com/smarsou/ai-text-detector/blob/master/data/eda_and_training.ipynb" style="color:#00eeff" target="_blank">here</a>.<br>
+                        🧼 The dataset underwent thorough analysis and cleaning prior to training. <br>
+                        📚 FastText was used as the NLP method for data vectorization. <br>
+                        🚀 The AI model is deployed via a REST API built with Flask. <br>
+                        🌐 It is hosted on an Ubuntu VM from OVH Cloud, configured with Nginx and Docker. <br>
+                        📨 The web page interacts with the REST API using AJAX requests. <br>
+                      </p>                                               
+                        <div class="list-button">
+                          <a href="http://smarsou.fr/lab/hackaton" target="_blank" rel="noopener noreferrer" class="btn-box">Try the app !</a>
+                          <div class="home-Sci"><a href="http://github.com/smarsou/ai-text-detector" target="_blank" rel="noopener noreferrer" style="--i:10"><i class='bx bxl-github'></i></a></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="portfolio-row">
+                    <div class="layer">
+                        <h5>Portfolio Web Development</h5>
+                        <p>
+                          The current website on wich you are is a web app developped in Java with the framework Spring Boot. <br>
+                          ⚙️ Backend in <strong>Java</strong> with <strong>SpringBoot</strong>.<br>
+                          🧪 <strong>JUnit</strong> and <strong>Mockito</strong> for unit and integration testing.<br>
+                          ✨ <strong>SonarCloud</strong> for code quality assurance.<br>
+                          📦 Microservice <strong>RESTAPI</strong> for data management through a dedicated Spring Boot application.<br>
+                          🐳 <strong>Docker</strong> with <strong>DockerCompose</strong> and <strong>Systemd</strong> for deploying applications (Web app, API, Nginx).<br>
+                          🌐 <strong>Nginx</strong> used as a reverse proxy.<br>
+                          🚀 Workflow with <strong>GitHub Actions</strong> for managing the CI/CD pipeline.<br>
+                        </p>
+                        <div class="list-button">
+                          <div class="home-Sci"><a href="http://github.com/smarsou/spring-web-portfolio" target="_blank" rel="noopener noreferrer" style="--i:10"><i class='bx bxl-github'></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div><img class="project-image" src="/public/pictures/portfolio-2.png" alt="Project Image"></div>
+                <div>
+                  <!-- <img src="" alt="Project Image"> -->
+                </div>
+                <div class="portfolio-row">
+                    <div class="layer">
+                      <h5>And Much More Coming Soon...</h5>
+                      <p>Currently being worked on...<br>
+                        Soon to be featured in this portfolio: EDA projects, a ChatBot LLM project with HuggingFace integration, Data Visualization, a C Compiler, C programming projects, and much more...  
+                      </p>                          
+                      <div class="list-button">
+                        <div class="home-Sci"><a href="http://github.com/smarsou" target="_blank" rel="noopener noreferrer" style="--i:10"><i class='bx bxl-github'></i></a></div>
+                      </div>
+                    </div>
                 </div>
             </div>
-        <div>
+        </div>
     </div>
-</div>
+</section>
 
-</div>
+  <!-- ********************* Part 2 ********************* -->
+  <section class="about" id="about">
+    <div class="project-image-wrapper">
+      <img class="project-image" src="/public/pictures/who.webp" alt="Who Am I Image">
+    </div>
+    <div class="about-text">
+      <h2>Who Am I? 🫣</h2>
+      <h4>Adaptable <span>IT Engineer</span> with a Passion for <span>Innovation</span></h4>
+      <p>
+        Hi! I'm an IT Engineer with diverse skills and a passion for problem-solving. <br>
+        💡 My expertise spans Data Science, Database Administration, Generative AI, backend developement and system administration.  <br>
+        🛠️ I work with tools like Docker, GitHub Actions, and SonarQube to streamline workflows, and I have solid experience in Linux server management.  <br>
+        🤝 Combining technical expertise with strong soft skills, I focus on teamwork, adaptability, and delivering impactful results. 
+        </p>        
+      <a href="/public/pdf/CV.pdf" target="_blank" rel="noopener noreferrer" class="btn-box">Check My Resume</a>
+    </div>
+  </section>
 
-<!-- begin background -->
-<div id='stars'></div>
-<div id='stars2'></div>
-<div id='stars3'></div>
-<!-- end background -->
-<script src="/public/js/animation.js"></script>
+  <!-- ********************* Part 3 ********************* -->
 
+  <section class="about" id="whywork">
+    <div class="about-text">
+      <h2>Why work with me? 🤔</h2>
+      <h4>🎛️ Technical expertise with broad skills</h4>
+      <p>
+      I possess strong technical skills across various domains: Computer Programming, Software Development, Web Development, Generative AI, Data Science, Database Administration, and System Administration. With this diverse experience, no new IT field is beyond my reach—I continuously expand my expertise.
+      </p>
+      <h4>⚡ A Quick Learner</h4>
+      <p>
+      My greatest strength lies in my adaptability and ability to learn quickly. I excel at mastering the best tools and techniques required to meet project goals. I am eager to embrace new technologies and innovative approaches, believing that success stems from leveraging both innovation and the valuable insights of others.
+      </p>
+      <h4>💡 Soft skills matter</h4>
+      <p>
+      Soft skills are the key to a project's success. They allow me to understand the needs and concerns of others and to communicate effectively, fostering collaboration to achieve shared goals. Communication is pivotal, and I also excel in crisis management when needed.
+      </p>
+      <!-- <a href="#" class="btn-box">More About Me</a> -->
+    </div>
+    <div class="project-image-wrapper">
+      <img src="/public/pictures/why.webp" class="project-image" alt="Why Image">
+    </div>
+  </section>
+
+  <!-- ********************* Part 4 ********************* -->
+  <!-- <section class="skills" id="skills">
+    <div class="container1">
+      <h1 class="heading1">Technical Skills</h1>
+      <div class="Technical-bars">
+        <div class="bar">
+          <i class='bx bxl-html5' style='color:#ff8c00'></i>
+          <div class="info">
+            <span>HTML</span>
+          </div>
+          <div class="progress-line html">
+            <span></span>
+          </div>
+        </div>
+        <div class="bar">
+          <i class='bx bxl-css3' style='color:hsl(201, 89%, 48%)'></i>
+          <div class="info">
+            <span>CSS</span>
+          </div>
+          <div class="progress-line css">
+            <span></span>
+          </div>
+        </div>
+        <div class="bar">
+          <i class='bx bxl-javascript' style='color:#fff700'></i>
+          <div class="info">
+            <span>JavaScript</span>
+          </div>
+          <div class="progress-line javascript">
+            <span></span>
+          </div>
+        </div>
+        <div class="bar">
+          <i class='bx bxl-python' style='color:#00eeff'></i>
+          <div class="info">
+            <span>Python</span>
+          </div>
+          <div class="progress-line python">
+            <span></span>
+          </div>
+        </div>
+        <div class="bar">
+          <i class='bx bxl-react' style='color:#00eeff'></i>
+          <div class="info">
+            <span>React</span>
+          </div>
+          <div class="progress-line react">
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     ********************* Part 5 *********************
+    <div class="container">
+      <h1 class="heading1">Professional Skills</h1>
+      <div class="radial-bars">
+        <div class="radial-bar">
+          <svg x="0px" y="0px" viewBox="0 0 200 200">
+            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+            <circle class="path path-1" cx="100" cy="100" r="80"></circle>
+          </svg>
+          <div class="percentage">90%</div>
+          <div class="text">Creativity</div>
+        </div>
+
+        <div class="radial-bar">
+          <svg x="0px" y="0px" viewBox="0 0 200 200">
+            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+            <circle class="path path-2" cx="100" cy="100" r="80"></circle>
+          </svg>
+          <div class="percentage">65%</div>
+          <div class="text">Communication</div>
+        </div>
+
+        <div class="radial-bar">
+          <svg x="0px" y="0px" viewBox="0 0 200 200">
+            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+            <circle class="path path-3" cx="100" cy="100" r="80"></circle>
+          </svg>
+          <div class="percentage">75%</div>
+          <div class="text">Problem Solving</div>
+        </div>
+
+        <div class="radial-bar">
+          <svg x="0px" y="0px" viewBox="0 0 200 200">
+            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+            <circle class="path path-4" cx="100" cy="100" r="80"></circle>
+          </svg>
+          <div class="percentage">85%</div>
+          <div class="text">Teamwork</div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ********************* Part 6 ********************* -->
+  <!-- Uncomment and adjust when ready -->
+  
+    
+   
+
+  <!-- *************************** last potion contact -->
+
+  <br /></br>
+  <!-- Footer section design -->
+  <footer class="footer" >
+    <div class="footer-waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Let's Connect</h3>
+        <div class="social-icons">
+          <!-- <a href="#" class="social-icon">
+            <i class='bx bxl-instagram-alt' style='color:#E4405F'></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class='bx bxl-whatsapp' style='color:#25D366'></i>
+          </a> -->
+          <a href="#" class="social-icon">
+            <i class='bx bxl-linkedin-square' style='color:#0A66C2'></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class='bx bxl-github' style='color:#fff'></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <!-- <li><a href="#skills">Skills</a></li> -->
+          <li><a href="#portfolio">Projects</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3 id="contact">Contact Info</h3>
+        <p><i class='bx bxs-envelope'></i>soulaimanmarsou@outlook.fr</p>
+        <p><i class='bx bxs-phone'></i>+33 7 82 98 94 05</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2024 Soulaïman Marsou | All Rights Reserved</p>
+      <p>Template from : Shekh Dalim</p>
+    </div>
+  </footer>
+
+  <!-- *************************** -->
+
+  <script src="/public/js/main.js"></script>
 </body>
+
 </html>
