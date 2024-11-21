@@ -1,78 +1,310 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M. Marsou</title>
-    <link rel="stylesheet" href="/public/style/button.css">
-    <link rel="stylesheet" href="/public/style/background.css">
-    <link rel="stylesheet" href="/public/style/projects.css">
-    <link rel="stylesheet" href="/public/style/index.css">
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="/public/style/index.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
+
 <body>
-<div id="phone"> Ce portfolio n'est pas pris en charge pour les smartphones. <br> Veuillez nous excuser pour la gêne occasionnée <br>--<br> Veuillez ouvrir une version pour ordinateur.</div>
-<div id="container">
-    <div id="left-column">
-        <p>My CV</p>
-        <svg onclick="home_to_CV()" width="18px" height="17px" viewBox="0 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g id="prev" transform="translate(8.500000, 8.500000) scale(-1, 1) translate(-8.500000, -8.500000)">
-                <polygon class="arrow" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
-                <polygon class="arrow-fixed" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
-                <path d="M-1.48029737e-15,0.56157424 L-1.48029737e-15,16.1929159 L9.708,8.33860465 L-2.66453526e-15,0.56157424 L-1.48029737e-15,0.56157424 Z M1.33333333,3.30246869 L7.62533333,8.34246869 L1.33333333,13.4327013 L1.33333333,3.30246869 L1.33333333,3.30246869 Z"></path>
-            </g>
-        </svg>
+  <header class="header">
+    <a href="#" class="logo">Portfolio</a>
+    <nav class="navbar">
+      <a href="#" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ********************* Part 1 ********************* -->
+  <section class="home">
+    <div class="home-content">
+      <h3>Hey, It's Me </h3>
+      <h1>Soulaïman Marsou</h1>
+      <h3>And I'm a <span class="text"></span></h3>
+      <p>I'm an IT Enginner with over 6 months of experience.
+        <br> Experienced in Software Developement with a strong expertise in Data & AI
+        <br> and much more.....
+      </p>
+      <div class="home-Sci">
+        <a href="https://www.linkedin.com/in/soula%C3%AFmanmarsou/" target="_blank" rel="noopener noreferrer" style="--i:9"><i class='bx bxl-linkedin-square'></i></a>
+        <a href="https://github.com/smarsou" target="_blank" rel="noopener noreferrer" style="--i:10"><i class='bx bxl-github'></i></a>
+      </div>
+      <a href="#" class="btn-box">More About Me</a>
+    </div>
+    <div class="about-img1">
+      <img class="img1" src="img.png" alt="">
+    </div>
+  </section>
+
+  <!-- ********************* Part 2 ********************* -->
+  <section class="about" id="about">
+    <div class="about-img">
+      <img src="img.png" alt="About Image">
+    </div>
+    <div class="about-text">
+      <h2>Who Am I</h2>
+      <h4>Proficient <span>IT Engineer</span> with a Passion for <span>Innovation</span></h4>
+      <p>I'm an adaptable IT Engineer with a unique combination of technical expertise and strong soft skills. My experience spans Generative AI using Hugging Face, CMDB management, and work as a Software Developer and Data Scientist. Alongside my technical abilities, I pride myself on being a collaborative team player, an effective communicator, and a proactive problem-solver. I believe that these soft skills are as crucial as technical know-how in driving impactful solutions and fostering innovation.
+      </p>
+      <a href="#" class="btn-box">More About Me</a>
+    </div>
+  </section>
+
+  <!-- ********************* Part 3 ********************* -->
+  <section class="services" id="services">
+    <div class="container">
+      <h1 class="sub-title">What I <span>do</span></h1>
+      <div class="services-list">
+        <div>
+          <i class='bx bx-code' style='color:#00eeff'></i>
+          <h2>Development</h2>
+          <p>I develop strong software and web application in Python, Java or PHP. I'm experienced with Flask, Spring Boot and Laravel.
+          I use strong CI/CD pipeline using Github, Docker and SonarQube to smooth the developement process. I manage also the configuration of linux server and have broad skills from System Engineering. I implement also REST APIs.</p>
+          <!-- <a href="#" class="read">Learn More</a> -->
+        </div>
+        <div>
+          <i class='bx bx-crop' style='color:#00eeff'></i>
+          <h2>Data Science</h2>
+          <p>I leveraged features from complex data trought exploratory data analysis (EDA). I use Python in Jupiter Notebooks with libraries like pandas, matplotlib and scikit-learn.
+             I clean and transform the data to leverage its all potential. <!-- <a href="#" class="read">Learn More</a> -->
+        </div>
+        <div>
+          <i class='bx bxl-apple' style='color:#00eeff'></i>
+          <h2>AI</h2>
+          <p>I mainly work on data to train models in the best way. I train Machine Learning Models as well as Large Language Models. I use PyTorch and Hugging Face for the training. 
+          I implement REST API to integrate those solutions in web applications. </p>
+          <!-- <a href="#" class="read">Learn More</a> -->
+        </div>
+        <div>
+          <i class='bx bxl-apple' style='color:#00eeff'></i>
+          <h2>Big Data</h2>
+          <p>I build your databases with strong technologies. I manage SQL and NoSQL databases. I'm primarly experienced with PostgreSQL, but also with MongoDB and Hbase. I'm initiat to Hadoop and its HDFS. I train myself on modern tools to leverage to be update on day-to-day technologie. I follow Azure Data Trainings to be update.  </p>
+          <!-- <a href="#" class="read">Learn More</a> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-img">
+      <img src="img.png" alt="About Image">
+    </div>
+    <div class="about-text">
+      <h2>Why working with me ?</h2>
+      <h4>I'm Technical with broad skills</h4>
+      <p>I have strong technical skills from Computer Programming, Software Developement, Web Developement, GenAI, Data Sience, Database Administration and System Administration. With this experience, no new field in IT can resist me and become a part of my experience.</p>
+      <h4>I'm a Quick-learner</h4>
+      <p>My main potential resids from my adapatability and my capacity of learning quickly. I adapt myself learning the best tools needed to achieve the goals of a project. I'm eager to learn new technologies and new ways of working on projects. I believe that a project is successful when we look for innovation and use gratefully the experience of others.</p>
+      <h4>I understand how important are soft skills</h4>
+      <p>Soft skills are the success key for a project. It helps me understand the needs and concers of others. It helps me communicate in the best way to help each other achieve the goals of the projects. Communication is one of the most important. Crisis management is also needed sometimes.</p>
+      <a href="#" class="btn-box">More About Me</a>
+    </div>
+  </section>
+
+  <!-- ********************* Part 4 ********************* -->
+  <section class="skills" id="skills">
+    <div class="container1">
+      <h1 class="heading1">Technical Skills</h1>
+      <div class="Technical-bars">
+        <div class="bar">
+          <i class='bx bxl-html5' style='color:#ff8c00'></i>
+          <div class="info">
+            <span>HTML, CSS, Javascript</span>
+          </div>
+          <div class="progress-line html">
+            <span></span>
+          </div>
+        </div>
+        <div class="bar">
+          <i class='bx bxl-css3' style='color:hsl(201, 89%, 48%)'></i>
+          <div class="info">
+            <span>CSS</span>
+          </div>
+          <div class="progress-line css">
+            <span></span>
+          </div>
+        </div>
+        <div class="bar">
+          <i class='bx bxl-javascript' style='color:#fff700'></i>
+          <div class="info">
+            <span>JavaScript</span>
+          </div>
+          <div class="progress-line javascript">
+            <span></span>
+          </div>
+        </div>
+        <div class="bar">
+          <i class='bx bxl-python' style='color:#00eeff'></i>
+          <div class="info">
+            <span>Python</span>
+          </div>
+          <div class="progress-line python">
+            <span></span>
+          </div>
+        </div>
+        <div class="bar">
+          <i class='bx bxl-react' style='color:#00eeff'></i>
+          <div class="info">
+            <span>React</span>
+          </div>
+          <div class="progress-line react">
+            <span></span>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div id="profile-column">
-        
-        <img id="profile-image" src="/public/pictures/profile.png" alt="Ma photo"> <!-- Remplacez 'profile-image.jpg' par le chemin de votre photo -->
-        <h1>Soulaïman Marsou</h1>
-        <h3> Graduate IT Engineer <br> Software Engineering · DATA · AI </h3>
-        <p id="description"> I'm looking for a job opportunity in the field of <strong>Software Engineering</strong> or in the field of <strong>Data</strong> in <strong>Belgium or Luxembourg</strong>. Here is my portfolio. Do not hesitate to check my CV or my projects. You can also find me on LinkedIn.
-        </p>
-        <img id='homebutton' src="/public/pictures/home.png" onclick="home()">
+    <!-- ********************* Part 5 ********************* -->
+    <div class="container">
+      <h1 class="heading1">Professional Skills</h1>
+      <div class="radial-bars">
+        <div class="radial-bar">
+          <svg x="0px" y="0px" viewBox="0 0 200 200">
+            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+            <circle class="path path-1" cx="100" cy="100" r="80"></circle>
+          </svg>
+          <div class="percentage">90%</div>
+          <div class="text">Creativity</div>
+        </div>
 
-    </div>
+        <div class="radial-bar">
+          <svg x="0px" y="0px" viewBox="0 0 200 200">
+            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+            <circle class="path path-2" cx="100" cy="100" r="80"></circle>
+          </svg>
+          <div class="percentage">65%</div>
+          <div class="text">Communication</div>
+        </div>
 
-    <div id="right-column">
-        <p>My projects</p>
-        <svg onclick="home_to_projects()" width="18px" height="17px" viewBox="-1 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g>
-                <polygon class="arrow" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
-                <polygon class="arrow-fixed" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
-                <path d="M-4.58892184e-16,0.56157424 L-4.58892184e-16,16.1929159 L9.708,8.33860465 L-1.64313008e-15,0.56157424 L-4.58892184e-16,0.56157424 Z M1.33333333,3.30246869 L7.62533333,8.34246869 L1.33333333,13.4327013 L1.33333333,3.30246869 L1.33333333,3.30246869 Z"></path>
-            </g>
-        </svg>
+        <div class="radial-bar">
+          <svg x="0px" y="0px" viewBox="0 0 200 200">
+            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+            <circle class="path path-3" cx="100" cy="100" r="80"></circle>
+          </svg>
+          <div class="percentage">75%</div>
+          <div class="text">Problem Solving</div>
+        </div>
+
+        <div class="radial-bar">
+          <svg x="0px" y="0px" viewBox="0 0 200 200">
+            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+            <circle class="path path-4" cx="100" cy="100" r="80"></circle>
+          </svg>
+          <div class="percentage">85%</div>
+          <div class="text">Teamwork</div>
+        </div>
+      </div>
     </div>
-</div>
-<!-- Quand on affiche le CV -->
-<iframe id="cv" class="pdf" src="/public/pdf/CV.pdf" width="90%" height="100%"> </iframe>
-<!-- Quand on affiche les projets -->
-<div id="projects">
-    <div id="maintenance">
-        <img src="/public/pictures/work-progress.png">
-    </div>
-    <div class="panel">
-        <div th:each="topic: ${topics}">
-            <h1 style="font-weight:700" th:text="${topic}"></h1>
-            <div class="subpanel">
-                <div th:each="project: ${projects}" th:if="${project.topic == topic}" th:utext="${project.html}" class="subsubpanel">
+  </section>
+
+  <!-- ********************* Part 6 ********************* -->
+  <!-- Uncomment and adjust when ready -->
+  
+    <section>
+        <div id="portfolio">
+            <div class="main-text" id="project">
+                <h2>Latest <span>Projects</span></h2>
+                <div class="portfolio-content">
+                    <div class="row">
+                        <img src="5757453.jpg" alt="Project Image">
+                        <div class="layer">
+                            <h5>Web Development</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta doloribus velit ipsa
+                                incidunt dolorum rerum tempora dolore, assumenda iste porro accusamus asperiores
+                                voluptates suscipit sit blanditiis, fugit modi consectetur non?</p>
+                            <a href="#"> <i class='bx bx-link-external' style="color:aliceblue;"></i></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="53.jpg" alt="Project Image">
+                        <div class="layer">
+                            <h5>Web Development</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta doloribus velit ipsa
+                                incidunt dolorum rerum tempora dolore, assumenda iste porro accusamus asperiores
+                                voluptates suscipit sit blanditiis, fugit modi consectetur non?</p>
+                            <a href="#"> <i class='bx bx-link-external' style="color:aliceblue;"></i></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="575.jpg" alt="Project Image">
+                        <div class="layer">
+                            <h5>Web Development</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta doloribus velit ipsa
+                                incidunt dolorum rerum tempora dolore, assumenda iste porro accusamus asperiores
+                                voluptates suscipit sit blanditiis, fugit modi consectetur non?</p>
+                            <a href="#"> <i class='bx bx-link-external' style="color:aliceblue;"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        <div>
+        </div>
+    </section>
+   
+
+  <!-- *************************** last potion contact -->
+
+  <br /></br>
+  <!-- Footer section design -->
+  <footer class="footer" >
+    <div class="footer-waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
     </div>
-</div>
 
-</div>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Let's Connect</h3>
+        <div class="social-icons">
+          <!-- <a href="#" class="social-icon">
+            <i class='bx bxl-instagram-alt' style='color:#E4405F'></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class='bx bxl-whatsapp' style='color:#25D366'></i>
+          </a> -->
+          <a href="#" class="social-icon">
+            <i class='bx bxl-linkedin-square' style='color:#0A66C2'></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class='bx bxl-github' style='color:#fff'></i>
+          </a>
+        </div>
+      </div>
 
-<!-- begin background -->
-<div id='stars'></div>
-<div id='stars2'></div>
-<div id='stars3'></div>
-<!-- end background -->
-<script src="/public/js/animation.js"></script>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+        </ul>
+      </div>
 
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <p><i class='bx bxs-envelope'></i>soulaimanmarsou@outlook.fr</p>
+        <p><i class='bx bxs-phone'></i>+33 7 82 98 94 05</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2024 Soulaïman Marsou | All Rights Reserved</p>
+      <p>Template from : Shekh Dalim</p>
+    </div>
+  </footer>
+
+  <!-- *************************** -->
+
+  <script src="/public/js/main.js"></script>
 </body>
+
 </html>

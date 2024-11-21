@@ -24,11 +24,11 @@ public class MainController {
     @GetMapping("/")
     public String index(Model model) {
 
-        Iterable<Project> projects = projectService.getProjects();
-        Iterable<String> topics = projectService.getTopics();
+        // Iterable<Project> projects = projectService.getProjects();
+        // Iterable<String> topics = projectService.getTopics();
 
-        model.addAttribute("topics", topics);
-        model.addAttribute("projects", projects);
+        // model.addAttribute("topics", topics);
+        // model.addAttribute("projects", projects);
         return "index";
     }
 
