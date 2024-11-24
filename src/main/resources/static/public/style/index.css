@@ -557,6 +557,18 @@
     max-width: 85%;
     height: auto;
     border: 1px solid white;
+    transition: transform 330ms ease-in-out;
+  }
+
+  .illustr-image {
+    border-radius: 8px;
+    max-width: 85%;
+    height: auto;
+    border: 1px solid white;
+  }
+
+  .project-image:hover {
+    transform: scale(1.2);
   }
 
   .portfolio-row{
