@@ -5,3 +5,10 @@ var typed = new Typed(".text", {
   backDelay: 1000,
   loop: true,
 });
+
+const menuToggle = document.querySelector('.menu-toggle');
+const navbar = document.querySelector('.navbar');
+
+menuToggle.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+});
