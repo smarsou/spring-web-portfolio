@@ -533,6 +533,7 @@
     height: auto;
     border: 1px solid white;
     transition: transform 330ms ease-in-out;
+    background-color: white;
   }
 
   .illustr-image {
@@ -938,7 +939,6 @@
   font-size: large;
   border: none;
 }
-
 
   /* Responsive Design */
   @media (max-width: 768px) {
