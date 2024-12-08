@@ -10,8 +10,6 @@ It communicates with the API to manage the data which I want to display on my po
 
 **Tech stack** : Java, Spring Boot, Maven, JUnit, Mockito, Linux, Github CI/CD, REST API, Nginx, Docker, SonarCloud
 
-**Summary**: 
-
 ## The Web App
 Accessible at http://smarsou.fr
 ### Home page (/)
@@ -52,7 +50,7 @@ Here is the *docker-compose.yml* file which is present in the VM.
         image: smarsou/web
         container_name: portfolio-web
         ports:
-          - 9000:9000
+          - 127.0.0.1:9000:9000
         environment:
           - API_DOMAIN=http://portfolio-api:9001/
         depends_on:
@@ -63,7 +61,9 @@ Here is the *docker-compose.yml* file which is present in the VM.
         image: smarsou/api
         container_name: portfolio-api
         ports:
-          - 9001:9001
+          - 127.0.0.1:9001:9001
+        volumes:
+          - /home/data:/data
         restart: always
       watchtower:
         image: containrrr/watchtower
