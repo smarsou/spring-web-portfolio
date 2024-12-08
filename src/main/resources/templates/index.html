@@ -21,8 +21,9 @@
     <nav class="navbar">
       <a href="#home" class="active" >Home</a>
       <a href="/public/pdf/CV.pdf" target="_blank">Resume</a>
-      <a href="#xp">Experience</a>
-      <a href="#project">Projects</a>
+      <th:block th:each="topic : ${topics}">
+        <a th:href="'#' + ${topic}" th:text="${topic}"></a>
+      </th:block>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -91,7 +92,7 @@
   <section th:each="topic : ${topics}">
     <div id="portfolio">
       <div class="main-text" id="xp">
-        <h2> Latest <span th:text="${topic}"></span> </h2>
+        <h2 th:id="${topic}"> Latest <span th:text="${topic}"></span></h2>
         <div class="portfolio-content">
           <th:block th:each="project: ${projects}" th:if="${project.topic == topic}" th:utext="${project.html}" ></th:block>
         </div>
