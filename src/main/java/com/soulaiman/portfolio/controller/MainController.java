@@ -24,11 +24,11 @@ public class MainController {
     @GetMapping("/")
     public String index(Model model) {
 
-        // Iterable<Project> projects = projectService.getProjects();
-        // Iterable<String> topics = projectService.getTopics();
+        Iterable<Project> projects = projectService.getProjects();
+        Iterable<String> topics = projectService.getTopics();
 
-        // model.addAttribute("topics", topics);
-        // model.addAttribute("projects", projects);
+        model.addAttribute("topics", topics);
+        model.addAttribute("projects", projects);
         return "index"; 
     }
 
@@ -50,13 +50,7 @@ public class MainController {
 
     @PostMapping("/admin/saveProject")
     public ModelAndView saveProject(@ModelAttribute Project project) {
-        System.out.println("ID : " + project.get_id());
-        System.out.println("Topic : " + project.getTopic());
-        System.out.println("HTML : " + project.getHtml());
-        Project saved = projectService.saveProject(project);
-        System.out.println("ID : " + saved.get_id());
-        System.out.println("Topic : " + saved.getTopic());
-        System.out.println("HTML : " + saved.getHtml());
+        projectService.saveProject(project);
         return new ModelAndView("redirect:/admin");
     }
 

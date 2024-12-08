@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+        <meta charset="UTF-8">
         <link rel="stylesheet" href="/public/style/admin.css">
     </head>
     <body>
@@ -30,7 +31,7 @@
                     </div>
                     <div>
                         <p>HTML content</p>
-                        <textarea disabled rows="8" id="html" name="html" th:value="*{html}" th:text="${project.html}"></textarea>
+                        <textarea disabled rows="8" id="html" name="html" th:value="*{html}" th:utext="${project.html}"></textarea>
                     </div>
                     <!-- <button type="submit">Save modification</button> -->
                     <a th:href="@{/admin/deleteProject/{id}(id=${project._id})}" class="delete-button">Delete project</a>

@@ -48,6 +48,8 @@ public class ProjectService {
     public Project saveProject(Project project) {
 
         Project savedProject;
+        project.setHtml(HtmlUtils.htmlEscape(project.getHtml()));
+        project.setTopic(HtmlUtils.htmlEscape(project.getTopic()));
         savedProject = projectProxy.saveProject(project);
 
         return savedProject;
