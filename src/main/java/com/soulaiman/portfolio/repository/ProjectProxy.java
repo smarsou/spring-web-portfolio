@@ -38,7 +38,7 @@ public class ProjectProxy {
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<Project> request = new HttpEntity<Project>(project);
 
-        if (project.get_id() == null){
+        if (project.getId() == null){
             ResponseEntity<Project> response = restTemplate.exchange(
                 postProjectUrl,
                 HttpMethod.POST,
@@ -49,7 +49,7 @@ public class ProjectProxy {
             return response.getBody();
         }else{
             ResponseEntity<Project> response = restTemplate.exchange(
-                postProjectUrl + "/" + project.get_id().toString(),
+                postProjectUrl + "/" + project.getId().toString(),
                 HttpMethod.PUT,
                 request,
                 Project.class);

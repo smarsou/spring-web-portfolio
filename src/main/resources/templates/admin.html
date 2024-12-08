@@ -24,7 +24,7 @@
         <div class="project-grid">
             <div th:each="project: ${projects}" class="project-card">
                 <form method="post" th:action="@{/admin/saveProject}" th:object="${to_update_project}">
-                        <input type="hidden" th:field="*{_id}"/>
+                        <!-- <input type="hidden" th:field="*{_id}"/> -->
                     <div>
                         <p>Topic</p>
                         <input  disabled type="text" id="topic" name="topic" th:value="${project.topic}">
@@ -34,7 +34,7 @@
                         <textarea disabled rows="8" id="html" name="html" th:value="*{html}" th:utext="${project.html}"></textarea>
                     </div>
                     <!-- <button type="submit">Save modification</button> -->
-                    <a th:href="@{/admin/deleteProject/{id}(id=${project._id})}" class="delete-button">Delete project</a>
+                    <a th:href="@{/admin/deleteProject/{id}(id=${project.id})}" class="delete-button">Delete project</a>
                 </form>
             </div>
         </div>

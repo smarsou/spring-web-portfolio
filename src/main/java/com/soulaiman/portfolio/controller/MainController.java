@@ -42,6 +42,7 @@ public class MainController {
     public String admin(Model model) {
 
         Iterable<Project> projects = projectService.getProjects(); 
+
         model.addAttribute("projects", projects);
         model.addAttribute("new_project", new Project());
         model.addAttribute("to_update_project", new Project());
