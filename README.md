@@ -52,7 +52,8 @@ Here is the *docker-compose.yml* file which is present in the VM.
         ports:
           - 127.0.0.1:9000:9000
         environment:
-          - API_DOMAIN=http://portfolio-api:9001/
+          - API_DOMAIN=http://portfolio-api:9001
+          - CHATBOT_DOMAIN=http://chatbot-api:8000
         depends_on:
           portfolio-api:
             condition: service_started
@@ -65,6 +66,13 @@ Here is the *docker-compose.yml* file which is present in the VM.
         volumes:
           - /home/data:/data
         restart: always
+      chatbot-api:
+        image: chatbot
+        container_name: chatbot-api
+        ports:
+          - 127.0.0.1:8001:8000
+        environment:
+          - OPENAI_API_KEY=${OPEN_API_KEY}
       watchtower:
         image: containrrr/watchtower
         container_name: watchtower
