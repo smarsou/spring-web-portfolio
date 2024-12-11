@@ -19,7 +19,7 @@ public class ProjectProxy {
     private String apiDomain;
 
     public Iterable<Project> getProjects() {
-        String getProjectsUrl = this.apiDomain + "project";
+        String getProjectsUrl = this.apiDomain + "/project";
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Iterable<Project>> response = restTemplate.exchange(

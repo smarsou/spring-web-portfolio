@@ -15,13 +15,16 @@ import org.springframework.security.web.SecurityFilterChain;
 public class WebSecurityConfig {
     @Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		http.headers(headers -> headers
+		http.csrf(csrf -> csrf
+		.ignoringRequestMatchers("/chatbot") // Disable CSRF for /chatbot
+		)
+		.headers(headers -> headers
 				.frameOptions(frameOptions -> frameOptions
 					.sameOrigin()
 				)
 		)
 		.authorizeHttpRequests((requests) -> requests
-			.requestMatchers("/", "/error", "/public/**").permitAll()
+			.requestMatchers("/", "/error", "/public/**", "/chatbot").permitAll()
 			.anyRequest().authenticated()
 		)
 		.formLogin((form) -> form

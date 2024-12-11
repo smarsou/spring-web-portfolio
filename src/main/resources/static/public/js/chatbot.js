@@ -42,7 +42,7 @@ sendBtn.addEventListener('click', () => {
         // }, 1500);
 
         $.ajax({
-            url: 'http://localhost:5000/api/gen',
+            url: '/chatbot',
             method: 'POST',
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify({ content : userInput }),
