@@ -54,9 +54,15 @@
     background-size: cover;
     background-position: center;
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     padding: 70px 10% 0;
   }
+
+  .home-content{
+    width: 50%;
+  }
+
   .home-content h3 {
     font-size: 32px;
     font-weight: 700;
