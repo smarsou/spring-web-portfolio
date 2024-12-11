@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="/public/style/chatbot.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -49,7 +50,7 @@
       <a href="#what" class="btn-box">More About Me</a>
     </div>
     <div class="chatbot">
-      <div class="chat-header">Chatbot</div>
+      <div class="chat-header">AI Ambassador</div>
       <div class="chat-body" id="chatBody">
       </div>
       <div class="chat-input">
@@ -204,38 +205,7 @@
   <!-- *************************** -->
 
   <script src="/public/js/main.js"></script>
-  <script>
-    const chatBody = document.getElementById('chatBody');
-    const chatInput = document.getElementById('chatInput');
-    const sendBtn = document.getElementById('sendBtn');
-
-    function addMessage(content, sender) {
-        const message = document.createElement('div');
-        message.className = `chat-message ${sender}`;
-        message.textContent = content;
-        chatBody.appendChild(message);
-        chatBody.scrollTop = chatBody.scrollHeight; // Auto-scroll to the latest message
-    }
-
-    sendBtn.addEventListener('click', () => {
-        const userInput = chatInput.value.trim();
-        if (userInput) {
-            addMessage(userInput, 'user');
-            chatInput.value = '';
-
-            // Simulate bot response
-            setTimeout(() => {
-                addMessage("I'm here to assist you!", 'bot');
-            }, 1000);
-        }
-    });
-
-    chatInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-            sendBtn.click();
-        }
-    });
-</script>
+  <script src="/public/js/chatbot.js"></script>
 </body>
 
 </html>
