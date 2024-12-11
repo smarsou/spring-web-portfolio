@@ -20,6 +20,7 @@ Accessible at http://smarsou.fr
 
 ### News
 
+- Added a chatbot connected with the OpenAI API to help recruiters get a friendly experience when looking at my profile.
 - New app hosted for demonstration, at http://smarsou.fr/lab/hackaton.
 - New interface.
 - Succesfully implemented a micro-service REST API with CRUD operations to manage the data about all my experience and project which I want to display in my portfolio. 
