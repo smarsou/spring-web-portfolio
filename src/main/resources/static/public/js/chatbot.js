@@ -35,27 +35,21 @@ sendBtn.addEventListener('click', () => {
         // Show typing indicator
         showTypingIndicator();
 
-        // Simulate bot response
-        // setTimeout(() => {
-        //     hideTypingIndicator();
-            
-        // }, 1500);
-
         $.ajax({
             url: '/chatbot',
             method: 'POST',
             contentType: "application/json; charset=utf-8",
+            // TODO : data has to be a list of dict which contains 'role' and 'content' fields ('role' can be 'user' or 'assistant', and 'content' is the content of the message)
             data: JSON.stringify({ content : userInput }),
             success: function(data) {
-            console.log('Data received:', data);
-            hideTypingIndicator();
-            addMessage(data, 'bot');
+                console.log('Data received:', data);
+                hideTypingIndicator();
+                addMessage(data, 'bot');
             },
             error: function(error) {
-            console.error('Error:', error);
-            hideTypingIndicator();
-            alert('Service temporary unavailable. Retry later.')
-            // addMessage('Error : Service temporary unavailable.', 'bot');
+                console.error('Error:', error);
+                hideTypingIndicator();
+                alert('Service temporary unavailable. Retry later.')
             }
             });
 
