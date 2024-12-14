@@ -1,5 +1,8 @@
 package com.soulaiman.portfolio.repository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
@@ -8,6 +11,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import com.soulaiman.portfolio.model.Project;
@@ -22,14 +26,18 @@ public class ProjectProxy {
         String getProjectsUrl = this.apiDomain + "/project";
 
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<Iterable<Project>> response = restTemplate.exchange(
+
+        try {
+            ResponseEntity<Iterable<Project>> response = restTemplate.exchange(
                 getProjectsUrl,
                 HttpMethod.GET,
                 null,
                 new ParameterizedTypeReference<Iterable<Project>>() {}
                 );
-        
-        return response.getBody();
+                return response.getBody();
+        } catch (RestClientException e) {
+            return new ArrayList<Project>();
+        }
     }
 
     public Project saveProject(Project project){
