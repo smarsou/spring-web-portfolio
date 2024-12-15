@@ -65,13 +65,15 @@ Here is the *docker-compose.yml* file which is present in the VM.
         ports:
           - 127.0.0.1:9001:9001
         volumes:
-          - /home/data:/data
+          - /opt/portfolio/data:/data
         restart: always
       chatbot-api:
         image: chatbot
         container_name: chatbot-api
         ports:
           - 127.0.0.1:8001:8000
+        volumes:
+          - /opt/logs/chatbot.log:/app/chatbot.log
         environment:
           - OPENAI_API_KEY=${OPEN_API_KEY}
       watchtower:
