@@ -1,6 +1,7 @@
 const chatBody = document.getElementById('chatBody');
 const chatInput = document.getElementById('chatInput');
 const sendBtn = document.getElementById('sendBtn');
+const chatHistory = []; 
 
 function addMessage(content, sender) {
     const message = document.createElement('div');
@@ -8,6 +9,11 @@ function addMessage(content, sender) {
     message.textContent = content;
     chatBody.appendChild(message);
     chatBody.scrollTop = chatBody.scrollHeight; // Auto-scroll to the latest message
+    chatHistory.push({'role': sender,'content': content})
+}
+
+function retrieveMessages() {
+    return chatHistory;
 }
 
 function showTypingIndicator() {
@@ -40,11 +46,11 @@ sendBtn.addEventListener('click', () => {
             method: 'POST',
             contentType: "application/json; charset=utf-8",
             // TODO : data has to be a list of dict which contains 'role' and 'content' fields ('role' can be 'user' or 'assistant', and 'content' is the content of the message)
-            data: JSON.stringify({ content : userInput }),
+            data: JSON.stringify(this.retrieveMessages()),
             success: function(data) {
                 console.log('Data received:', data);
                 hideTypingIndicator();
-                addMessage(data, 'bot');
+                addMessage(data, 'assistant');
             },
             error: function(error) {
                 console.error('Error:', error);
@@ -62,4 +68,4 @@ chatInput.addEventListener('keydown', (e) => {
     }
 });
 
-addMessage("Hi there! 😊 \n I'm here to help you learn more about me, my skills, and what I can do to help you. Feel free to ask me anything. \n Where would you like to start?",'bot')
+addMessage("Hi there! 😊 \n I'm here to help you learn more about me, my skills, and what I can do to help you. Feel free to ask me anything. \n Where would you like to start?",'assistant')

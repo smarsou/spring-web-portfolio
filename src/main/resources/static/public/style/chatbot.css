@@ -50,7 +50,7 @@
     border: 1px solid white;
 }
 
-.chat-message.bot {
+.chat-message.assistant {
     align-self: flex-start;
     color: #0ef;
     border: 1px solid #0ef;

@@ -19,7 +19,7 @@ public class ChatbotProxy {
     public String sendRequest(JsonNode content){
         
         String postProjectUrl = this.chatbotApiDomain + "/api/gen";
-        System.out.println("In proxy with :" + postProjectUrl + " ; " + content);
+        
         RestTemplate restTemplate = new RestTemplate();
         
         // Create headers and set Content-Type to application/json
