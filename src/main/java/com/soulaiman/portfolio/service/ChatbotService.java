@@ -44,6 +44,7 @@ public class ChatbotService {
 
         // Increment the count and update the map
         info.count++;
+        System.out.println("Limit request : " + ipAddress + " - " + String.valueOf(info.count));
         ipRequestMap.put(ipAddress, info);
 
         // Process the request
