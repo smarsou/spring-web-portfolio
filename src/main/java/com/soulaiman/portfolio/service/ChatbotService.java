@@ -1,6 +1,7 @@
 package com.soulaiman.portfolio.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -20,7 +21,8 @@ public class ChatbotService {
     // In-memory storage: IP -> [Request count, Date]
     private final Map<String, IpRequestInfo> ipRequestMap = new HashMap<>();
 
-    private static final int MAX_REQUESTS_PER_DAY = 2;
+    @Value("${chatbot.max_requests_limit}")
+    private int MAX_REQUESTS_PER_DAY;
 
     public synchronized String sendRequest(JsonNode json, String ipAddress) {
         LocalDate today = LocalDate.now();
