@@ -18,6 +18,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.soulaiman.portfolio.model.Project;
 import com.soulaiman.portfolio.service.ProjectService;
+
+import jakarta.servlet.http.HttpServletRequest;
+
 import com.soulaiman.portfolio.service.ChatbotService;
 
 @Controller
@@ -71,9 +74,14 @@ public class MainController {
 
     @PostMapping("/chatbot")
     @ResponseBody
-    public String generate(@RequestBody JsonNode json) {
-        System.out.println("Start request with : " + json );
-        String response = chatbotService.sendRequest(json);
+    public String generate(@RequestBody JsonNode json, HttpServletRequest request) {
+        System.out.println("Start request with : " + json);
+        String ipAddress = request.getHeader("X-FORWARDED-FOR");
+        if (ipAddress == null){
+            ipAddress = request.getRemoteAddr();
+        }
+        System.out.println("Remote IP : " + ipAddress);
+        String response = chatbotService.sendRequest(json, ipAddress);
         return response;
     }
 

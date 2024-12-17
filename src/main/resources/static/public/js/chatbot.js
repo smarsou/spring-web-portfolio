@@ -48,14 +48,17 @@ sendBtn.addEventListener('click', () => {
             // TODO : data has to be a list of dict which contains 'role' and 'content' fields ('role' can be 'user' or 'assistant', and 'content' is the content of the message)
             data: JSON.stringify(this.retrieveMessages()),
             success: function(data) {
-                console.log('Data received:', data);
                 hideTypingIndicator();
-                addMessage(data, 'assistant');
+                if (data.startsWith("!!ERROR!!")){
+                    data = data.replace(/^!!ERROR!!/, '');
+                    alert(data);
+                }else{
+                    addMessage(data, 'assistant');
+                }
             },
             error: function(error) {
-                console.error('Error:', error);
                 hideTypingIndicator();
-                alert('Service temporary unavailable. Retry later.')
+                alert('Service temporary unavailable. Try again or retry later.')
             }
             });
 
