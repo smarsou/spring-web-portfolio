@@ -2,8 +2,8 @@
 
 A Java web application with Spring Boot to manage and render my portfolio.
 It includes :
-- retrieve projects' data from a custom microservice API (https://github.com/smarsou/spring-api-portfolio).
-- display a home page, with my CV and my projects
+- retrieve projects' data from a custom API (https://github.com/smarsou/spring-api-portfolio).
+- display a landing page, with my projects
 - manage projects data through an admin panel
 
 It communicates with the API to manage the data which I want to display on my portfolio.
@@ -20,7 +20,7 @@ Accessible at http://smarsou.fr
 
 ### News
 
-- Added a chatbot connected with the OpenAI API to help recruiters get a friendly experience when looking at my profile.
+- Added a chatbot connected with the OpenAI API to help recruiters get a friendly experience when looking at my profile (still need to be improved).
 - New app hosted for demonstration, at http://smarsou.fr/lab/hackaton.
 - New interface.
 - Succesfully implemented a micro-service REST API with CRUD operations to manage the data about all my experience and project which I want to display in my portfolio. 

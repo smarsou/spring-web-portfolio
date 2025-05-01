@@ -22,7 +22,7 @@
     </button>
     <nav class="navbar">
       <a href="#home" class="active" >Home</a>
-      <a href="/public/pdf/CV.pdf" target="_blank">Resume</a>
+      <!-- <a href="/public/pdf/CV.pdf" target="_blank">Resume</a> -->
       <th:block th:each="topic : ${topics}">
         <a th:href="'#' + ${topic}" th:text="${topic}"></a>
       </th:block>
@@ -67,31 +67,33 @@
         <div>
           <i class='bx bx-code' style='color:#00eeff'></i>
           <h2>Development</h2>
-          <p>💻 I develop robust software and web applications in Python, Java, or PHP. I'm experienced with frameworks like Flask, Spring Boot, and Laravel. 
-          🔄 I use efficient CI/CD pipelines with GitHub, Docker, and SonarQube to streamline the development process. 
+          <p>💻 I develop robust software, web applications and REST APIs in Python. I'm experienced with frameworks like Flask and FastAPI. 
+            🧠 I'm gaining experience with React and Next.js, which I enjoy using to develop better UIs. 
+          🔄 I use efficient CI/CD pipelines with GitHub, Gitlab and Docker to streamline the deployment process. 
           🖥️ I also manage Linux server configurations and possess a broad range of skills in System Engineering. 
-          🌐 Additionally, I implement REST APIs to enable seamless communication between services.</p>
         </div>
         <div>
           <i class='bx bx-bar-chart-alt-2' style='color:#00eeff'></i>
           <h2>Data Science</h2>
           <p>📊 I extract meaningful features from complex datasets through Exploratory Data Analysis (EDA). 
-          🐍 I leverage Python in Jupyter Notebooks with libraries like pandas, matplotlib, and scikit-learn to clean, transform, and unlock the full potential of data.</p>
+          🐍 I leverage Python in Jupyter Notebooks with libraries like pandas, matplotlib, and scikit-learn to clean, transform, and unlock the full potential of data.
+          📦 I develop strong data pipelines using low-level tools like Python for data collection, cleaning, and transformation, and I use CRON jobs on Linux servers to automate processing tasks.</p>
         </div>
         <div>
           <i class='bx bx-bot' style='color:#00eeff'></i>
-          <h2>AI</h2>
-          <p>🤖 I specialize in training Machine Learning Models and Large Language Models. 
-          🧠 Using PyTorch and Hugging Face, I optimize training processes to achieve the best performance. 
+          <h2>AI & LLM</h2>
+          <p>
+          🤖 I train ML models using TensorFlow and PyTorch to solve complex problems. 
+          🛠️ I fine-tune, optimize and serve LLM models using Hugging Face, PEFT methods and llama.cpp.
           🌐 I integrate these solutions into web applications by implementing REST APIs, making AI accessible and functional in real-world scenarios.</p>
         </div>
         <div>
           <i class='bx bx-data' style='color:#00eeff'></i>
           <h2>Big Data</h2>
           <p>🗄️ I design and manage databases using robust technologies, handling both SQL and NoSQL systems. 
-          🐘 My primary experience is with PostgreSQL, but I also work with MongoDB and HBase. 
-          🌐 I am familiar with Hadoop and its HDFS ecosystem. 
-          🚀 To stay up-to-date, I continually train on modern tools and technologies, including Azure Data solutions.</p>
+          🐘 I'm comfortable with PostgreSQL and MongoDB. 
+          🌐 I am familiar with Hadoop and its HDFS ecosystem.
+          🚀 To stay up-to-date, I continually train on modern tools and technologies, including Azure Data solutions like Databricks.</p>
         </div>        
       </div>
     </div>
@@ -110,30 +112,25 @@
 
   <!-- ********************* Part 2 ********************* -->
   <section class="about" id="about">
-    <div class="project-image-wrapper">
-      <img class="illustr-image" src="/public/pictures/who.webp" alt="Who Am I Image">
-    </div>
     <div class="about-text">
       <h2>Who Am I? 🫣</h2>
       <h4>Adaptable <span>IT Engineer</span> with a Passion for <span>Innovation</span></h4>
       <p>
         Hi! I'm an IT Engineer with diverse skills and a passion for problem-solving. <br>
-        💡 My expertise spans Data Science, Database Administration, Generative AI, backend developement and system administration.  <br>
-        🛠️ I work with tools like Docker, GitHub Actions, and SonarQube to streamline workflows, and I have solid experience in Linux server management.  <br>
+        💡 My expertise spans Data Science, generative AI, backend developement and system administration.  <br>
+        🛠️ I work with tools like Docker and GitHub Actions to streamline workflows, and I have solid experience in Linux server management.  <br>
         🤝 Combining technical expertise with strong soft skills, I focus on teamwork, adaptability, and delivering impactful results. 
         </p>        
-      <a href="/public/pdf/CV.pdf" target="_blank" rel="noopener noreferrer" class="btn-box">Check My Resume</a>
+      <a href="https://www.linkedin.com/in/soula%C3%AFmanmarsou/" target="_blank" rel="noopener noreferrer" class="btn-box">Check my LinkedIn profile</a>
     </div>
   </section>
 
-  <!-- ********************* Part 3 ********************* -->
-
-  <section class="about" id="whywork">
+  <section class="about">
     <div class="about-text">
       <h2>Why work with me? 🤔</h2>
       <h4>🎛️ Technical expertise with broad skills</h4>
       <p>
-      I possess strong technical skills across various domains: Computer Programming, Software Development, Web Development, Generative AI, Data Science, Database Administration, and System Administration. With this diverse experience, no new IT field is beyond my reach—I continuously expand my expertise.
+      I possess strong technical skills across various domains: Development, Generative AI, Data Science, and System Administration. With this diverse experience, no new IT field is beyond my reach, and I'm eager to become an expert in one of these fields.
       </p>
       <h4>⚡ A Quick Learner</h4>
       <p>
@@ -143,10 +140,6 @@
       <p>
       Soft skills are the key to a project's success. They allow me to understand the needs and concerns of others and to communicate effectively, fostering collaboration to achieve shared goals. Communication is pivotal, and I also excel in crisis management when needed.
       </p>
-      <!-- <a href="#" class="btn-box">More About Me</a> -->
-    </div>
-    <div class="project-image-wrapper">
-      <img src="/public/pictures/why.webp" class="illustr-image" alt="Why Image">
     </div>
   </section>
 
@@ -164,16 +157,10 @@
       <div class="footer-section">
         <h3>Let's Connect</h3>
         <div class="social-icons">
-          <!-- <a href="#" class="social-icon">
-            <i class='bx bxl-instagram-alt' style='color:#E4405F'></i>
-          </a>
-          <a href="#" class="social-icon">
-            <i class='bx bxl-whatsapp' style='color:#25D366'></i>
-          </a> -->
-          <a href="#" class="social-icon">
+          <a href="https://www.linkedin.com/in/soula%C3%AFmanmarsou/" class="social-icon">
             <i class='bx bxl-linkedin-square' style='color:#0A66C2'></i>
           </a>
-          <a href="#" class="social-icon">
+          <a href="https://github.com/smarsou" class="social-icon">
             <i class='bx bxl-github' style='color:#fff'></i>
           </a>
         </div>
@@ -184,7 +171,6 @@
         <ul class="footer-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <!-- <li><a href="#skills">Skills</a></li> -->
           <li><a href="#portfolio">Projects</a></li>
         </ul>
       </div>
@@ -197,7 +183,7 @@
     </div>
 
     <div class="footer-bottom">
-      <p>© 2024 Soulaïman Marsou | All Rights Reserved</p>
+      <p>© 2025 Soulaïman Marsou | All Rights Reserved</p>
       <p>Template from : Shekh Dalim</p>
     </div>
   </footer>

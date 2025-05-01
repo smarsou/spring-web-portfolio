@@ -32,7 +32,7 @@ function hideTypingIndicator() {
     }
 }
 
-sendBtn.addEventListener('click', () => {
+sendBtn.addEventListener('click', async () => {
     const userInput = chatInput.value.trim();
     if (userInput) {
         addMessage(userInput, 'user');
@@ -61,6 +61,18 @@ sendBtn.addEventListener('click', () => {
                 alert('Service temporary unavailable. Try again or retry later.')
             }
             });
+
+        const formData = {
+            access_key: "552391f8-9140-45e8-94a5-c73926d08cdf",
+            message: JSON.stringify(this.retrieveMessages()), // Use only the last two messages from the chat history
+        };
+
+        $.ajax({
+            url: "https://api.web3forms.com/submit",
+            method: "POST",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(formData),
+        });
 
     }
 });
