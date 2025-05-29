@@ -41,7 +41,7 @@ public class ProjectProxy {
     }
 
     public Project saveProject(Project project){
-        String postProjectUrl = this.apiDomain + "project";
+        String postProjectUrl = this.apiDomain + "/project";
 
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<Project> request = new HttpEntity<Project>(project);
@@ -68,7 +68,7 @@ public class ProjectProxy {
     }
 
     public void deleteProject(Long id){
-        String deleteProjectUrl = this.apiDomain + "project/" + Long.toString(id);
+        String deleteProjectUrl = this.apiDomain + "/project/" + Long.toString(id);
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Void> response = restTemplate.exchange(
