@@ -1,4 +1,6 @@
-﻿# Spring Boot Web Portfolio
+⚠️ My portoflio is no longer online ⚠️
+
+# Spring Boot Web Portfolio
 
 A Java web application with Spring Boot to manage and render my portfolio.
 It includes :
@@ -11,7 +13,6 @@ It communicates with the API to manage the data which I want to display on my po
 **Tech stack** : Java, Spring Boot, Maven, JUnit, Mockito, Linux, Github CI/CD, REST API, Nginx, Docker, SonarCloud
 
 ## The Web App
-Accessible at http://smarsou.fr
 ### Home page (/)
 <img src=".github\static\portfolio-2.png" width="800"/>
 
@@ -97,5 +98,6 @@ The github workflow job does the following for this repository :
 - build the new image
 
 Then, the image is in the local registry. 
+
 
 
